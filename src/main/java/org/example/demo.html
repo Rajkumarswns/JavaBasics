@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Selenium Locator Strategy Demo Site</title>
+    <!--Insert bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!--Create a tile centering the view area -->
+    <h3 style="text-align: center;">Selenium Locator Strategy Demo Site</h3>
+    <!-- insert a form using bootstrap form style -->
+    <form class="container">
+
+        <!-- Get Employee ID, Name, Date Of Birth with date picker, drop down with Male/Female, Radio Button to select
+            if they Graduate / Non-Graduate -->
+        <div class="form-group">
+            <input type="text" class="form-control" id="employeeId" placeholder="Enter Employee ID">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" id="employeeName" name="employeeName"
+                placeholder="Enter Employee Name">
+        </div>
+        <div class="form-group">
+            <input type="date" class="form-control" placeholder="Enter Date Of Birth">
+        </div>
+
+        <div class="form-group">
+            <select class="form-control" id="GenderInput">
+                <option>Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">HTML</label><br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">CSS</label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">JavaScript</label>
+
+        </div>
+
+        <!-- insert hyper link for google, microsoft and yahoo -->
+        <div class="form-group">
+            <a href="https://www.google.com">Google</a>
+            <a href="https://www.microsoft.com">Microsoft</a>
+            <a href="https://www.yahoo.com">Yahoo</a>
+        </div>
+
+        <div class="form-group">
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" placeholder="upload file">
+        </div>
+
+         <div class="form-group">
+            <iframe id="addressiframe" height="300" width="1100" src="../example/address.html"></iframe>
+         </div>
+
+        <button type="submit" class="btn btn-primary" onclick="ConfirmSubmission(this)">Submit</button>
+        <button type="reset" class="btn btn-primary">Reset</button>
+
+
+
+    </form>
+
+    <script>
+        function ConfirmSubmission() {
+            alert("Form Submitted Successfully");
+        }
+
+        function confirmIFrameButton() {
+            alert("Button Clicked within IFrame");
+        }
+    </script>
+</body>
+
+</html>
