@@ -2,12 +2,15 @@ package org.example;
 
 import java.io.Console;
 import java.time.Duration;
+import java.time.LocalDate;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 
 public class WebDriverDemo {
@@ -17,13 +20,21 @@ public class WebDriverDemo {
 
         try
         {
-        // create webdriver object to use chrome browser
+     
+
+        // create chrome options
+        ChromeOptions   options = new ChromeOptions();
+        options.addArguments("--disable-notifications");
+           // create webdriver object to use chrome browser
         WebDriver driver = new ChromeDriver();
+
+           // maximize the browser window
+           driver.manage().window().maximize();
 
         // configure implicit wait
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("http://127.0.0.1:3000/src/main/java/org/example/demo.html");
-        Thread.sleep(5000);
+        Thread.sleep(1000);
 
         System.out.println(driver.getTitle());
 
@@ -118,11 +129,57 @@ public class WebDriverDemo {
             assert true;
         }   
 
-        // switch back to the main window
-        //driver.switchTo().defaultContent();
-        driver.switchTo().window(driver.getWindowHandle());
+        // // switch back to the main window
+        // //driver.switchTo().defaultContent();
+         driver.switchTo().window(driver.getWindowHandle());
 
-        
+        // get row count from the table
+        WebElement table = driver.findElement(By.xpath("//table"));
+        if(table.isDisplayed()){
+            // write message to console
+            System.out.println("Table is displayed");
+            // get the row count
+            var rowCount = table.findElements(By.tagName("tr")).size();
+            System.out.println("Row count is " + (rowCount-1));
+            assert true;
+        }
+
+        // iterate throgh table body and get the cell value
+        var tableBody = table.findElement(By.tagName("tbody"));
+        var rows = tableBody.findElements(By.tagName("tr"));
+        for (WebElement row : rows) {
+            var cells = row.findElements(By.tagName("td"));
+            for (WebElement cell : cells) {
+                System.out.println(cell.getText());
+            }
+        }
+
+        WebElement rangeSlider = driver.findElement(By.xpath("//input[@type='range']"));    
+        if(rangeSlider.isDisplayed()){
+            // write message to console
+            System.out.println("Range slider is displayed");
+            String initValue = rangeSlider.getAttribute("value");
+            System.out.println("Initial value is " + initValue);
+            for(int i=0; i<5 ; i++){
+                rangeSlider.sendKeys(Keys.ARROW_RIGHT); 
+            }
+            String finalValue = rangeSlider.getAttribute("value");
+            System.out.println("Final value is " + finalValue);
+
+             assert true;
+        }
+
+        // color picket demo
+        WebElement colorPicker = driver.findElement(By.xpath("//input[@type='color']"));
+        if(colorPicker.isDisplayed()){
+            // write message to console
+            System.out.println("Color picker is displayed");
+            colorPicker.clear();
+            colorPicker.sendKeys("#ff0000");
+            assert true;
+        }
+
+         
         // click on submit button
         WebElement submitButton = driver.findElement(By.xpath("//button[@type='submit']"));
         if(submitButton.isDisplayed()){
@@ -137,6 +194,7 @@ public class WebDriverDemo {
 
             driver.switchTo().alert().accept();
             assert true;
+            // switch back to main window
 
 
         }
@@ -144,7 +202,7 @@ public class WebDriverDemo {
 
 
  
-        Thread.sleep(3000);
+        Thread.sleep(300);
 
         // add explicit wait
     
@@ -153,10 +211,13 @@ public class WebDriverDemo {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }   
-        //verify the title of the browser
-       
+        
           
         
+        
+    
+
+    
         
     }
     
