@@ -3,10 +3,15 @@ package org.example;
 import java.util.Scanner;
 
 public class Main {
+
+     
     public static void main(String[] args) {
 
         // Simple display message
         System.out.println("Hello world!");
+       
+        // DataTypeDemo
+        DataTypeDemo();
 
         // Get input from the user
         UserInputDemo();
@@ -33,8 +38,47 @@ public class Main {
 
         PropertyFileDemo();
 
+        HashmapDemo();
+
         // wait for the user to hit enter
         System.out.println("Press enter to continue...");
+
+    }
+
+    private static void DataTypeDemo() {
+
+        // create various data type variables
+        int myNum = 5; // Integer (whole number)
+        float myFloatNum = 5.99f; // Floating point number
+        char myLetter = 'D'; // Character
+        boolean myBool = true; // Boolean
+        String myText = "Hello"; // String
+
+        // what is the scope of mynum variable
+      
+        
+        // print the variables
+        System.out.println(myNum);
+        System.out.println(myFloatNum);
+        System.out.println(myLetter);
+        System.out.println(myBool);
+        System.out.println(myText);
+
+
+
+      }
+
+    private static void HashmapDemo() {
+        
+        // demo of hashmap
+        java.util.HashMap<String, Integer> people = new java.util.HashMap<String, Integer>();
+        people.put("John", 32);
+        people.put("Steve", 30);
+        people.put("Angie", 33);
+        people.put("Paul", 40);
+        for (java.util.Map.Entry<String, Integer> entry : people.entrySet()) {
+            System.out.println(entry.getKey() + " is " + entry.getValue() + " years old");
+        }
 
     }
 
@@ -92,6 +136,13 @@ public class Main {
         String[] names = { "John", "Paul", "George", "Ringo" };
         for (int i = 0; i < names.length; i++) {
             System.out.println("The name at index " + i + " is: " + names[i]);
+        }
+
+        // /store five students name and two subjects marks in an array
+        String[] students = { "John", "Paul", "George", "Ringo", "Pete" };
+        int[][] marks = { { 90, 80 }, { 85, 90 }, { 88, 85 }, { 80, 80 }, { 70, 60 } };
+        for (int i = 0; i < students.length; i++) {
+            System.out.println(students[i] + " scored " + marks[i][0] + " in Math and " + marks[i][1] + " in Science");
         }
     }
 
