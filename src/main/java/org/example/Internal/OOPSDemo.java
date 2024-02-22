@@ -1,15 +1,12 @@
-package org.example;
+package org.example.Internal;
 
-import java.util.Calendar;
-import java.util.Date;
- 
+import org.example.oops.Benz;
+
+  
 public class OOPSDemo {
 
     public static void main(String[] args) {
  
-
-         
-
 
             Benz benz = new Benz();
             benz.start();

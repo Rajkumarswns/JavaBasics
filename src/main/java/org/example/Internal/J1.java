@@ -1,8 +1,8 @@
-package org.example;
+package org.example.Internal;
 
 import java.util.Scanner;
 
-public class JavaSession1 {
+public class J1 {
 
     public static void main(String[] args) {
         System.out.println("Hello World");
@@ -121,8 +121,7 @@ public class JavaSession1 {
         
 
         // in the autoamtion, you want to test the login functionality with 5 
-        //different user and password
-        for (int i = 1; i == 5; i++) {
+         for (int i = 1; i == 5; i++) {
             System.out.println(myName);
         }
         

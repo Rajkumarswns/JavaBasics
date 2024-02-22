@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="classes" name="Test Run by NXG" verbose="2">
+	<test thread-count="1" parallel="classes" name="Command line test" verbose="2">
+		<classes>
+		
+		<!-- This file is used by Jenkin for Execution - Jenking Demo Execution -->
+
+			<class name="org.example.External.AutomationDemo" />
+
+			
+
+		</classes>
+	</test> <!-- Command line test -->
+</suite> <!-- Test Run by NXG -->

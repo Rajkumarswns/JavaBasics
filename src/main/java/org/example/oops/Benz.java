@@ -1,4 +1,4 @@
-package org.example;
+package org.example.oops;
 public class Benz extends Car{
     public void changeGears(int gear) {
         System.out.println("Benz Changing Gears to " + gear);

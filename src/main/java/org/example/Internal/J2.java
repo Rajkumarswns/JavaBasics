@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Internal;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -52,8 +52,7 @@ public class J2 {
         var prop = new Properties();
         prop.put("url", "http://www.example.com");
         prop.put("username", "admin");
-        prop.put("password", "admin123");
-
+ 
         //write to file
         try {
             prop.store(new FileOutputStream("config.properties"), null);
@@ -66,8 +65,7 @@ public class J2 {
             prop.load(new FileInputStream("config.properties"));
             System.out.println(prop.getProperty("url"));
             System.out.println(prop.getProperty("username"));
-            System.out.println(prop.getProperty("password"));
-        } catch (Exception e) {
+         } catch (Exception e) {
             e.printStackTrace();
         }
        

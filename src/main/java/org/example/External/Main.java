@@ -1,4 +1,4 @@
-package org.example;
+package org.example.External;
 
 import java.util.Scanner;
 
