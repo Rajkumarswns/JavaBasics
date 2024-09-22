@@ -9,7 +9,10 @@ public class Main {
 
         // Simple display message
         System.out.println("Hello world!");
-       
+
+        System.out.println("https://pac.zscalerthree.net/BcpmC4KC9Njv/kiosk.pac");
+
+        
         // DataTypeDemo
         DataTypeDemo();
 

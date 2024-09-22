@@ -17,6 +17,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
+import org.sikuli.script.FindFailed;
+import org.sikuli.script.Key;
+import org.sikuli.script.Pattern;
+import org.sikuli.script.Region;
+import org.sikuli.script.Screen;
 
 import com.google.common.io.Files;
 
@@ -119,8 +124,61 @@ public class WebDriverDemo {
                 // click on the first tab
                 driver.switchTo().window(driver.getWindowHandle());
 
+                // minimize the window
+                
+
                 assert true;
             }
+
+
+            // handle file upload
+            WebElement fileUpload = driver.findElement(By.id("exampleFormControlFile1"));
+            if (fileUpload.isDisplayed()) {
+                // write message to console
+                System.out.println("File upload is displayed");
+                fileUpload.sendKeys("C:\\Users\\PIM_TCOE_ADM\\Downloads\\Movies.csv");
+                assert true;
+            }
+			try {
+				Screen screen = new Screen();
+
+				// Set the file paths to the images you want to use for Sikuli pattern matching
+				String openDialogImage = "images/open_dialog.png"; // Image of the Open dialog window
+				String fileInDialogImage = "images/your_file.png"; // Image of the file in the Open dialog window
+
+				// Set the filepath for the file you want to upload
+				String filePath = "path/to/your/file";
+
+				// Define a region on the screen where you expect the Open dialog window to
+				// appear
+				Region dialogRegion = new Region(0, 0, screen.w, screen.h); // Set to the fullscreen resolution
+
+				// Click the file upload control button to open the file dialog
+				//screen.click("images/upload_button.png");
+
+				
+				// Find the Open dialog window within the specified region with a tolerance level
+ 
+				Pattern openDialogPattern = new Pattern(openDialogImage).similar(0.7f);
+				screen.find(openDialogPattern);
+
+				// Type the filepath into the Open dialog window
+
+				screen.type(openDialogPattern, filePath);
+				// Press Enter to select the file
+				screen.type(Key.ENTER);
+
+			} catch (FindFailed e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+      
+
+            // Press Enter to select the file
+
+            //C:\Users\PIM_TCOE_ADM\Downloads
+
 
             // get the address1 element from iframe with the id addressiframe
             driver.switchTo().frame("addressiframe");

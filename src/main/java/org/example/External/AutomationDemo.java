@@ -20,6 +20,44 @@ public class AutomationDemo extends TestNGAutomationDemo {
     }
     public static void main(String[] args) {
 
+        // Financial banking application - account trasnfer screen.
+        // Login page  - 10 elements
+        // Dashboard -   15 elements 
+        // Account - Details -  10 elements
+        // Account Transfer - 10 elements
+        // Account - international transfer - 10 elements
+        // Loan application - 10 elements
+        // SEarch
+        // Contact US
+        // Logout - 5 elements
+        // Title  - Account - Intra transfer  -    300 Elements 
+
+        // 200 elements to be captured using locator strategy (id, name, xpath
+        //, csslocator, linktext, partiallinktext, classname, tagname)
+
+        // 1000 Test cases -  (should you hae 1000 test scripts, )
+        //   6 Modules - Each module cn be represented as a Test script class
+        //  Feature wise split up - 20 Features -  20 Test script class
+        
+
+        // Login ( 6 Test Cases )  - 20 Web Elements 
+        //    Successful Login  
+        //    Unsuccessful Login
+        //    Forgot Password
+        //    Change Password
+        //    Account Lock Scenario 
+        
+
+        // 1 Test script that will test 5 functionlaites (TCS)
+
+
+
+
+        // Web application will have pages  - 
+        // each page will ahve list of web elements
+
+
+
         // WebDriver object can be created in 3 different ways
         // 1. Direct - below example
         // 2. WebDriverManager - use this // WNS environment will work only on this

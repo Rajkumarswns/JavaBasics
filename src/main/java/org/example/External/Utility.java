@@ -17,4 +17,12 @@ public  class Utility {
             return false;
         }
     }
+
+    // add a function add two numbers
+
+    public int add()
+    {
+        return 0;
+    }
+
 }
