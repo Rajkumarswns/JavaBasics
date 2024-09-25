@@ -56,6 +56,7 @@ public class Main {
         char myLetter = 'D'; // Character
         boolean myBool = true; // Boolean
         String myText = "Hello"; // String
+        boolean isMale  = true;
 
         // what is the scope of mynum variable
       

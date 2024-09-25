@@ -5,8 +5,9 @@
     "\\src\\main",
     "\\src\\main\\java",
     "\\src\\main\\java\\org",
-    "\\src\\main\\java\\org\\example"
+    "\\src\\main\\java\\org\\example",
+    "\\src\\main\\java\\org\\example\\External"
   ],
-  "SelectedNode": "\\src\\main\\java\\org\\example\\testLogin.java",
+  "SelectedNode": "\\src\\main\\java\\org\\example\\External\\Main.java",
   "PreviewInSolutionExplorer": false
 }

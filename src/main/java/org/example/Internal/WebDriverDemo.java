@@ -32,7 +32,7 @@ public class WebDriverDemo {
 
         try {
 
-            // create chrome options
+            // create chrome options  https://peter.sh/experiments/chromium-command-line-switches/
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--disable-notifications");
             // create webdriver object to use chrome browser
@@ -136,7 +136,7 @@ public class WebDriverDemo {
             if (fileUpload.isDisplayed()) {
                 // write message to console
                 System.out.println("File upload is displayed");
-                fileUpload.sendKeys("C:\\Users\\PIM_TCOE_ADM\\Downloads\\Movies.csv");
+                fileUpload.sendKeys("C:\\Users\\PIM_TCOE_ADM\\Downloads\\TestScript.txt");
                 assert true;
             }
 			try {
@@ -216,6 +216,25 @@ public class WebDriverDemo {
                 }
             }
 
+            // print all table title column text
+            var columns = driver.findElements(By.xpath("//tr//child::th"));
+            System.out.println("Columns of the table is ");
+            System.out.println("---------------------");
+            for(WebElement col : columns)
+            {
+                System.out.println(col.getText());
+            }
+            System.out.println("---------------------");
+
+            // pick the color picker
+            WebElement element  = driver.findElement(By.cssSelector(".form-control-color"));
+            if (element.isDisplayed())
+            {
+                element.sendKeys("#ff0000");
+                System.out.println("Color changed");
+            }
+
+
             /*
              * WebElement rangeSlider =
              * driver.findElement(By.xpath("//input[@type='range']"));
@@ -291,3 +310,25 @@ public class WebDriverDemo {
     }
 
 }
+
+
+// /html/body/form/div[3]/input    -- Absolute Path
+// //input[@type='date']    -- Relative path   uses attribute 
+//div[5]/label[2]
+
+// //td[text()='Smith']
+// //input[contains(@type,'date')]
+// //input[starts-with(@name,'e')]
+// //input[ends-with(@id,'1')]              // do not work with selenium
+
+// //input[not(@type='date')]    using not operator
+// //button[@type!='submit']
+
+// using axes - refer table columns
+//tr//child::th
+
+// CSS Selector
+// [type='range']
+// tbody > tr:nth-child(2)   --- Select 2nd Row
+
+// Compound Locators
